@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071a33">
+<meta name="description" content="স্মার্ট ভূমি সার্ভে - গৌরীপুর, ময়মনসিংহ। পেশাদার ভূমি জরিপ ও ভূমি সংক্রান্ত সেবা।">
+<title>স্মার্ট ভূমি সার্ভে | গৌরীপুর, ময়মনসিংহ</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --navy:#071a33;
+  --navy2:#0d294b;
+  --gold:#d8aa55;
+  --gold2:#f2d18a;
+  --white:#fff;
+  --muted:#64748b;
+  --light:#f5f8fc;
+  --line:#e5eaf1;
+  --green:#159447;
+  --blue:#1877f2;
+  --shadow:0 18px 50px rgba(7,26,51,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans Bengali',system-ui,sans-serif;
+  color:#152238;background:#fff;line-height:1.7;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1160px,92%);margin:auto}
+.navbar{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(7,26,51,.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:1.15rem}
+.logo-mark{
+  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);
+  font-size:1.25rem;box-shadow:0 8px 25px rgba(216,170,85,.22)
+}
+.nav-links{display:flex;gap:7px;align-items:center}
+.nav-links a{color:#dce7f5;padding:9px 13px;border-radius:9px;font-size:.9rem;transition:.25s}
+.nav-links a:hover{background:rgba(255,255,255,.08);color:#fff}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.7rem;cursor:pointer}
+
+.hero{
+  position:relative;overflow:hidden;background:
+  radial-gradient(circle at 80% 20%,rgba(216,170,85,.16),transparent 28%),
+  linear-gradient(135deg,#071a33,#0c2d50 65%,#09213c);
+  color:#fff;padding:105px 0 90px;
+}
+.hero:before{
+  content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(255,255,255,.08);
+  border-radius:50%;right:-120px;top:-150px;animation:spin 18s linear infinite;
+}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center;position:relative}
+.badge{
+  display:inline-flex;padding:6px 12px;border:1px solid rgba(242,209,138,.35);
+  border-radius:99px;color:var(--gold2);font-size:.83rem;background:rgba(255,255,255,.04);margin-bottom:16px
+}
+.hero h1{font-size:clamp(2.2rem,5vw,4.25rem);line-height:1.15;margin-bottom:18px;font-weight:800}
+.hero h1 span{color:var(--gold2)}
+.hero p{max-width:680px;color:#cbd8e8;font-size:1.06rem}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 20px;border-radius:11px;font-weight:700;transition:.25s;border:1px solid transparent
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#071a33}
+.btn-outline{border-color:rgba(255,255,255,.24);color:#fff;background:rgba(255,255,255,.05)}
+.btn-green{background:var(--green);color:#fff}
+.btn-blue{background:var(--blue);color:#fff}
+
+.hero-search{
+  margin-top:22px;max-width:680px;display:flex;align-items:center;gap:8px;
+  padding:6px;background:#fff;border:1px solid rgba(255,255,255,.3);
+  border-radius:14px;box-shadow:0 14px 35px rgba(0,0,0,.18)
+}
+.hero-search>span{font-size:1.1rem;margin-left:10px}
+.hero-search input{
+  flex:1;min-width:0;border:0;outline:0;background:transparent;color:#152238;
+  font:inherit;padding:10px 5px
+}
+.hero-search input::placeholder{color:#7a8797}
+.hero-search button{
+  border:0;border-radius:10px;background:var(--navy);color:#fff;
+  padding:10px 18px;font:inherit;font-weight:700;cursor:pointer;white-space:nowrap
+}
+.hero-search button:hover{background:var(--navy2)}
+@media(max-width:560px){
+  .hero-search{padding:5px}
+  .hero-search input{font-size:.82rem}
+  .hero-search button{padding:9px 12px;font-size:.82rem}
+}
+
+.hero-card{
+  background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.14);padding:30px;border-radius:25px;
+  box-shadow:0 25px 70px rgba(0,0,0,.2);animation:float 5s ease-in-out infinite
+}
+.hero-card .big-icon{font-size:4.2rem;margin-bottom:12px}
+.hero-card h3{font-size:1.35rem}.hero-card p{font-size:.9rem;margin-top:5px}
+
+section{padding:82px 0}
+.section-head{text-align:center;max-width:720px;margin:0 auto 38px}
+.kicker{color:#a47a2b;font-weight:800;font-size:.83rem;letter-spacing:.08em}
+.section-head h2{font-size:clamp(1.7rem,3.5vw,2.5rem);color:var(--navy);margin:5px 0 8px}
+.section-head p{color:var(--muted)}
+.search-wrap{max-width:620px;margin:0 auto 32px;position:relative}
+.search-wrap input{
+  width:100%;padding:15px 18px 15px 48px;border:1px solid var(--line);border-radius:14px;
+  outline:none;font:inherit;box-shadow:0 8px 28px rgba(7,26,51,.05)
+}
+.search-wrap input:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(216,170,85,.12)}
+.search-icon{position:absolute;left:17px;top:50%;transform:translateY(-50%);font-size:1.1rem}
+.quick-search{background:#fff;padding:28px 0 8px}
+.quick-search-box{
+  max-width:900px;margin:auto;padding:18px 20px;border:1px solid var(--line);
+  border-radius:18px;background:#fff;box-shadow:0 12px 35px rgba(7,26,51,.08);
+  display:flex;align-items:center;gap:22px
+}
+.quick-search-title{display:flex;align-items:center;gap:12px;min-width:245px}
+.quick-search-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#f6edda;font-size:1.2rem}
+.quick-search-title strong{display:block;color:var(--navy);font-size:.98rem}
+.quick-search-title small{display:block;color:var(--muted);font-size:.72rem;margin-top:2px}
+.quick-search-input{display:flex;flex:1;gap:8px}
+.quick-search-input input{
+  width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;
+  outline:none;font:inherit
+}
+.quick-search-input input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(216,170,85,.12)}
+.quick-search-input button{
+  border:0;border-radius:10px;padding:0 22px;background:var(--navy);color:#fff;
+  font:inherit;font-weight:700;cursor:pointer;white-space:nowrap
+}
+.quick-search-input button:hover{background:var(--navy2)}
+@media(max-width:700px){
+  .quick-search-box{display:block;padding:16px}
+  .quick-search-title{margin-bottom:12px}
+  .quick-search-input button{padding:0 17px}
+}
+
+.services{background:var(--light)}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.service-card{
+  background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  box-shadow:0 10px 30px rgba(7,26,51,.05);transition:.3s
+}
+.service-card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:rgba(216,170,85,.5)}
+.service-img{
+  height:150px;display:grid;place-items:center;font-size:3.1rem;
+  background:linear-gradient(135deg,#eaf1f8,#f8f4e9)
+}
+.service-body{padding:18px}.service-body h3{font-size:1.05rem;color:var(--navy);margin-bottom:5px}
+.service-body p{font-size:.83rem;color:var(--muted)}
+.no-result{text-align:center;color:var(--muted);display:none;padding:20px;grid-column:1/-1}
+
+.surveyors{background:#fff}
+.surveyor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
+.surveyor{
+  border:1px solid var(--line);border-radius:22px;padding:26px;background:#fff;
+  box-shadow:var(--shadow);display:grid;grid-template-columns:145px 1fr;gap:25px;align-items:center;
+  transition:.3s
+}
+.surveyor:hover{transform:translateY(-5px)}
+.profile-photo{
+  width:145px;height:165px;border-radius:18px;display:grid;place-items:center;
+  background:linear-gradient(145deg,#e7edf4,#f8f1df);font-size:3.5rem;border:1px solid var(--line)
+}
+.surveyor h3{color:var(--navy);font-size:1.3rem}
+.role{color:#a47a2b;font-weight:700;font-size:.86rem}
+.surveyor p{font-size:.87rem;color:var(--muted);margin:5px 0 12px}
+.surveyor .buttons{margin-top:10px}
+
+.about{background:var(--light)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.about-box{background:#fff;border-radius:22px;padding:30px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.checks{display:grid;gap:13px;margin-top:20px}
+.check{display:flex;gap:10px;align-items:flex-start}.check b{color:var(--green)}
+
+.contact{background:linear-gradient(135deg,#071a33,#0d294b);color:#fff}
+.contact .section-head h2{color:#fff}.contact .section-head p{color:#b8c8dc}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.contact-card{
+  border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:28px;
+  background:rgba(255,255,255,.05)
+}
+.contact-item{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.09)}
+.contact-item:last-child{border:0}.contact-item .ico{font-size:1.35rem}
+.contact-item small{display:block;color:#9fb2ca}.contact-item strong{font-size:1rem}
+.social-placeholder{
+  min-height:180px;border:1px dashed rgba(255,255,255,.25);border-radius:16px;
+  display:grid;place-items:center;text-align:center;color:#b8c8dc;padding:20px
+}
+.social-placeholder strong{display:block;color:#fff;font-size:1.15rem;margin-bottom:5px}
+
+footer{background:#041224;color:#9fb2ca;text-align:center;padding:28px 0;font-size:.84rem}
+footer strong{color:#fff}
+
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:none}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+@media(max-width:900px){
+  .nav-links{position:absolute;top:74px;left:0;right:0;background:#071a33;padding:12px 4%;display:none;flex-direction:column;align-items:stretch}
+  .nav-links.open{display:flex}.nav-links a{text-align:center}
+  .menu-btn{display:block}
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero{padding:78px 0}.hero-card{max-width:520px}
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+  .surveyor-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  section{padding:62px 0}
+  .nav-inner{height:68px}.nav-links{top:68px}
+  .logo{font-size:.98rem}.logo-mark{width:38px;height:38px}
+  .hero{padding:60px 0}.hero h1{font-size:2.25rem}
+  .hero-card{padding:22px}.buttons{flex-direction:column}
+  .btn{width:100%}
+  .service-grid{grid-template-columns:1fr}
+  .surveyor{grid-template-columns:1fr;text-align:center}
+  .profile-photo{margin:auto}
+  .surveyor .buttons{align-items:center}
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="logo"><span class="logo-mark">⌖</span>স্মার্ট ভূমি সার্ভে</a>
+    <button class="menu-btn" aria-label="Menu" onclick="toggleMenu()">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">হোম</a>
+      <a href="#services">সার্ভিস</a>
+      <a href="#surveyors">সার্ভেয়ার</a>
+      <a href="#about">আমাদের সম্পর্কে</a>
+      <a href="#contact">যোগাযোগ</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <span class="badge">পেশাদার ভূমি জরিপ সেবা</span>
+      <h1>সঠিক মাপজোকের জন্য<br><span>স্মার্ট ভূমি সার্ভে</span></h1>
+      <p>আধুনিক প্রযুক্তি, নির্ভুল মাপজোক এবং পেশাদার সেবার মাধ্যমে আপনার ভূমি সংক্রান্ত কাজকে আরও সহজ ও নির্ভরযোগ্য করে তুলুন।</p>
+      <div class="buttons">
+        <a class="btn btn-gold" href="tel:01849318104">📞 এখনই কল করুন</a>
+        <a class="btn btn-green" href="https://wa.me/8801849318104" target="_blank" rel="noopener">🟢 WhatsApp</a>
+      </div>
+
+      <div class="hero-search">
+        <span>🔍</span>
+        <input id="heroSearch" type="search" placeholder="যেকোনো তথ্য খুঁজুন — সার্ভিস, সার্ভেয়ার, যোগাযোগ, ঠিকানা..." aria-label="পুরো ওয়েবসাইটে তথ্য খুঁজুন">
+        <button type="button" onclick="runHeroSearch()">খুঁজুন</button>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <div class="big-icon">📐</div>
+      <h3>নির্ভুল ভূমি জরিপ</h3>
+      <p>গৌরীপুর, ময়মনসিংহ ও আশপাশের এলাকায় পেশাদার সার্ভে সেবা।</p>
+    </div>
+  </div>
+</header>
+
+
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">OUR SERVICES</span>
+      <h2>আমাদের সার্ভিসসমূহ</h2>
+      <p>আপনার প্রয়োজন অনুযায়ী ৭টি নির্ধারিত সার্ভিস।</p>
+    </div>
+
+    <div class="service-grid" id="serviceGrid">
+      <article class="service-card reveal" data-name="ভূমি জরিপ land survey">
+        <div class="service-img">📐</div><div class="service-body"><h3>ভূমি জরিপ</h3><p>জমির সঠিক মাপজোক ও জরিপ কাজ।</p></div>
+      </article>
+      <article class="service-card reveal" data-name="সীমানা নির্ধারণ boundary">
+        <div class="service-img">📍</div><div class="service-body"><h3>জমির সীমানা নির্ধারণ</h3><p>জমির সীমানা চিহ্নিত ও নির্ধারণ।</p></div>
+      </article>
+      <article class="service-card reveal" data-name="ডিজিটাল ম্যাপ নকশা digital map">
+        <div class="service-img">🗺️</div><div class="service-body"><h3>ডিজিটাল ম্যাপ / নকশা</h3><p>আধুনিক পদ্ধতিতে ডিজিটাল নকশা প্রস্তুত।</p></div>
+      </article>
+      <article class="service-card reveal" data-name="জমির মাপজোক measurement">
+        <div class="service-img">📏</div><div class="service-body"><h3>জমির মাপজোক</h3><p>জমির পরিমাপ ও প্রয়োজনীয় হিসাব।</p></div>
+      </article>
+      <article class="service-card reveal" data-name="দাগ খতিয়ান যাচাই dag khatian">
+        <div class="service-img">📋</div><div class="service-body"><h3>দাগ / খতিয়ান যাচাই</h3><p>প্রয়োজনীয় ভূমি তথ্য যাচাইয়ে সহায়তা।</p></div>
+      </article>
+      <article class="service-card reveal" data-name="জমি ভাগ বাটোয়ারা partition">
+        <div class="service-img">🏡</div><div class="service-body"><h3>জমি ভাগ-বাটোয়ারা</h3><p>ভূমি ভাগের জন্য মাপজোক ও নকশা।</p></div>
+      </article>
+      <article class="service-card reveal" data-name="অন্যান্য সার্ভে সেবা survey service">
+        <div class="service-img">🧭</div><div class="service-body"><h3>অন্যান্য সার্ভে সেবা</h3><p>প্রয়োজন অনুযায়ী অন্যান্য পেশাদার জরিপ সহায়তা।</p></div>
+      </article>
+      <div class="no-result" id="noResult">কোনো সার্ভিস পাওয়া যায়নি।</div>
+    </div>
+  </div>
+</section>
+
+<section class="surveyors" id="surveyors">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">OUR SURVEYORS</span>
+      <h2>আমাদের সার্ভেয়ার</h2>
+      <p>দক্ষ ও পেশাদার সার্ভেয়ারদের মাধ্যমে নির্ভরযোগ্য সেবা।</p>
+    </div>
+
+    <div class="surveyor-grid">
+      <article class="surveyor reveal" id="surveyor-rezaul">
+        <div class="profile-photo">👨‍💼</div>
+        <div>
+          <span class="role">সার্ভেয়ার</span>
+          <h3>মোঃ রেজাউল করিম</h3>
+          <p><strong>যোগ্যতা:</strong> Diploma in Computer Engineering<br>
+          পেশাদার ভূমি জরিপ ও ডিজিটাল সার্ভে সেবা।</p>
+          <div class="buttons">
+            <a class="btn btn-gold" href="tel:01849318104">📞 Call Now</a>
+            <a class="btn btn-green" href="https://wa.me/8801849318104" target="_blank" rel="noopener">🟢 WhatsApp</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="surveyor reveal" id="surveyor-khalek">
+        <div class="profile-photo">👨‍💼</div>
+        <div>
+          <span class="role">ভূমি জরিপকারী (আমিন)</span>
+          <h3>মোঃ আব্দুল খালেক</h3>
+          <p><strong>পদবি:</strong> ভূমি জরিপকারী (আমিন)<br>
+          <strong>দায়িত্ব:</strong> সভাপতি, গৌরীপুর উপজেলা ভূমি জরিপকারী (আমিন) সমিতি</p>
+          <div class="buttons">
+            <a class="btn btn-gold" href="tel:01726690940">📞 Call Now</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="reveal">
+      <span class="kicker">WHY US</span>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);color:#071a33;margin:7px 0 12px">কেন স্মার্ট ভূমি সার্ভে?</h2>
+      <p style="color:#64748b">ভূমি জরিপের গুরুত্বপূর্ণ কাজে আমরা নির্ভুলতা, স্বচ্ছতা এবং আধুনিক প্রযুক্তিকে গুরুত্ব দিই।</p>
+      <div class="checks">
+        <div class="check"><b>✓</b><span>আধুনিক ও পেশাদার সার্ভে পদ্ধতি</span></div>
+        <div class="check"><b>✓</b><span>নির্ভুল মাপজোক ও হিসাব</span></div>
+        <div class="check"><b>✓</b><span>গ্রাহকের প্রয়োজন অনুযায়ী সেবা</span></div>
+        <div class="check"><b>✓</b><span>গৌরীপুর, ময়মনসিংহে সেবা</span></div>
+      </div>
+    </div>
+    <div class="about-box reveal">
+      <div style="font-size:3rem;margin-bottom:10px">🏢</div>
+      <h3 style="color:#071a33;font-size:1.4rem">স্মার্ট ভূমি সার্ভে</h3>
+      <p style="color:#64748b;margin-top:8px">ভূমি জরিপ ও ভূমি সংক্রান্ত পেশাদার সেবার জন্য আমাদের সাথে যোগাযোগ করুন।</p>
+      <div class="buttons">
+        <a class="btn btn-gold" href="#contact">যোগাযোগ করুন</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker" style="color:#f2d18a">CONTACT</span>
+      <h2>যোগাযোগ করুন</h2>
+      <p>আপনার প্রয়োজনীয় ভূমি জরিপ সেবা সম্পর্কে জানতে সরাসরি যোগাযোগ করুন।</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="contact-item"><span class="ico">📍</span><div><small>ঠিকানা</small><strong>গৌরীপুর, ময়মনসিংহ</strong></div></div>
+        <div class="contact-item"><span class="ico">📞</span><div><small>মোঃ রেজাউল করিম</small><strong>01849318104</strong></div></div>
+        <div class="contact-item"><span class="ico">📞</span><div><small>মোঃ আব্দুল খালেক</small><strong>01726690940</strong></div></div>
+        <div class="buttons">
+          <a class="btn btn-gold" href="tel:01849318104">📞 Call 01849318104</a>
+          <a class="btn btn-green" href="https://wa.me/8801849318104" target="_blank" rel="noopener">🟢 WhatsApp</a>
+          <a class="btn btn-outline" href="tel:01726690940">📞 Call 01726690940</a>
+        </div>
+      </div>
+      <div class="contact-card reveal" id="facebook">
+        <div class="social-placeholder">
+          <div>
+            <div style="font-size:2.3rem">🔵</div>
+            <strong>স্মার্ট ভূমি সার্ভে Facebook Page</strong>
+            <span>আমাদের Facebook Page-এ ভিজিট করুন।</span>
+            <div class="buttons" style="justify-content:center">
+              <a class="btn btn-blue" href="https://www.facebook.com/profile.php?id=61590408557200" target="_blank" rel="noopener noreferrer">🔵 Facebook Page</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <strong>স্মার্ট ভূমি সার্ভে</strong><br>
+    Professional Land Survey Service · গৌরীপুর, ময়মনসিংহ<br>
+    <span>© 2026 স্মার্ট ভূমি সার্ভে. All Rights Reserved.</span>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
+});
+
+const globalSearchData = [
+  {keys:['স্মার্ট ভূমি সার্ভে','smart bhumi survey','হোম'], target:'#home'},
+  {keys:['ভূমি জরিপ','land survey','জরিপ'], target:'#services'},
+  {keys:['সীমানা','সীমানা নির্ধারণ','boundary'], target:'#services'},
+  {keys:['ডিজিটাল ম্যাপ','নকশা','digital map'], target:'#services'},
+  {keys:['জমির মাপজোক','মাপজোক','measurement'], target:'#services'},
+  {keys:['দাগ','খতিয়ান','দাগ খতিয়ান যাচাই'], target:'#services'},
+  {keys:['ভাগ বাটোয়ারা','জমি ভাগ','partition'], target:'#services'},
+  {keys:['অন্যান্য সার্ভে','সার্ভে সেবা'], target:'#services'},
+  {keys:['রেজাউল করিম','01849318104','ডিপ্লোমা','diploma in computer engineering'], target:'#surveyor-rezaul'},
+  {keys:['আব্দুল খালেক','01726690940','আমিন','ভূমি জরিপকারী','সভাপতি','সমিতি'], target:'#surveyor-khalek'},
+  {keys:['যোগাযোগ','contact','ফোন','মোবাইল'], target:'#contact'},
+  {keys:['গৌরীপুর','ময়মনসিংহ','ঠিকানা','address'], target:'#contact'},
+  {keys:['whatsapp','হোয়াটসঅ্যাপ'], target:'#contact'},
+  {keys:['facebook','ফেসবুক'], target:'#facebook'},
+  {keys:['আমাদের সম্পর্কে','about','কেন স্মার্ট'], target:'#about'}
+];
+
+function runHeroSearch(){
+  const q=document.getElementById('heroSearch').value.trim().toLowerCase();
+  if(!q){ document.getElementById('home').scrollIntoView({behavior:'smooth'}); return; }
+  const found=globalSearchData.find(item=>item.keys.some(k=>k.toLowerCase().includes(q)||q.includes(k.toLowerCase())));
+  if(found){
+    const el=document.querySelector(found.target);
+    if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+  }else{
+    alert('দুঃখিত, এই তথ্যটি পাওয়া যায়নি। সার্ভিস, সার্ভেয়ার, যোগাযোগ, ঠিকানা বা Facebook লিখে খুঁজুন।');
+  }
+}
+document.getElementById('heroSearch').addEventListener('keydown',e=>{
+  if(e.key==='Enter') runHeroSearch();
+});
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add('show');
+  });
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
